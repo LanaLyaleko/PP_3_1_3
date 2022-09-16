@@ -13,7 +13,7 @@ public class UserController {
 
     private final UserService userService;
 
-    @Autowired
+
     public UserController(UserService userService) {
         this.userService = userService;
     }
@@ -24,6 +24,7 @@ public class UserController {
     }
 
     @GetMapping("/user")
+    @RequestMapping("/user")
     public String showUser(Model model) {
         User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         model.addAttribute("user", user);

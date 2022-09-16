@@ -19,6 +19,7 @@ public class AdminController {
         this.roleService = roleService;
     }
     @GetMapping("/admin")
+    @RequestMapping("/admin")
     public String index(Model model) {
         User thisUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         model.addAttribute("newUser", new User());
